@@ -1,2 +1,13 @@
+*.asm
+*.o
+*.obj
+*.bin
+*.elf
+*.exe
+
+*
+!/**/
+!*.*
+
 /target
 /test
