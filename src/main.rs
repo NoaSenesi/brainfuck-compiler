@@ -13,8 +13,8 @@ fn main() {
 	if args.len() <= 1 {
 		println!("Usage: {} [options] <file>\n", args[0]);
 		println!("Options:");
+		println!("\t-c <cells>\t\tSpecify number of cells (default: {})", unsafe { CELLS });
 		println!("\t-o <output>\t\tSpecify output file");
-		println!("\t-c <number>\t\tSpecify number of cells (default: {})", unsafe { CELLS });
 		return;
 	}
 
