@@ -1,4 +1,4 @@
-use crate::CELLS;
+use crate::get_cells;
 
 #[derive(PartialEq)]
 pub enum TokenType {
@@ -99,9 +99,9 @@ pub fn optimize(tokens: Vec<Token>) -> Vec<Token> {
 			if token.count == 0 {
 				continue;
 			} else if token.count < 0 {
-				token.count = -(-token.count % CELLS as i64);
+				token.count = -(-token.count % get_cells() as i64);
 			} else {
-				token.count %= CELLS as i64;
+				token.count %= get_cells() as i64;
 			}
 		}
 

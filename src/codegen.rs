@@ -1,4 +1,4 @@
-use crate::CELLS;
+use crate::get_cells;
 use crate::tokenizer::Token;
 use crate::tokenizer::TokenType;
 
@@ -107,7 +107,7 @@ pub fn generate_assembly(tokens: Vec<Token>) -> String {
 	code.push_str("\tsyscall\n\n");
 	code.push_str("section .data\n");
 	code.push_str("\tCELLS equ ");
-	code.push_str(&CELLS.to_string());
+	code.push_str(&get_cells().to_string());
 	code.push_str("\n\n");
 	code.push_str("section .bss\n");
 	code.push_str("\tcells resb CELLS");
